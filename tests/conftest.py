@@ -90,7 +90,7 @@ def one_customer(app):
         name=CUSTOMER_NAME,
         postal_code=CUSTOMER_POSTAL_CODE,
         phone=CUSTOMER_PHONE,
-        registered_at="01-01-2001"
+        register_at="01-01-2001"
     )
     db.session.add(new_customer)
     db.session.commit()
@@ -101,7 +101,7 @@ def second_customer(app):
         name="Second Customer",
         postal_code="12345",
         phone="234-234-2345",
-        registered_at="01-01-2001"
+        register_at="01-01-2001"
     )
     db.session.add(new_customer)
     db.session.commit()
@@ -112,7 +112,7 @@ def third_customer(app):
         name="Customer Three",
         postal_code= "12344",
         phone="000-000-0000",
-        registered_at="01-01-2001"
+        register_at="01-01-2001"
     )
     db.session.add(new_customer)
     db.session.commit()

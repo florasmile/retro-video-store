@@ -343,6 +343,7 @@ def test_update_customer(client, one_customer):
 
     # Assert
     assert response.status_code == 204
+    
 
     query = db.select(Customer).where(Customer.id == 1)
     customer = db.session.scalar(query)
