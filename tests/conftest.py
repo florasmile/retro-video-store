@@ -7,6 +7,7 @@ from app.models.customer import Customer
 from app.models.rental import Rental
 from dotenv import load_dotenv
 import os
+from sqlalchemy import text
 
 load_dotenv()
 
@@ -33,7 +34,15 @@ def app():
         db.session.remove()
 
     with app.app_context():
+        # # Drop everything: tables and sequences
+        # db.session.execute(text("DROP SCHEMA public CASCADE;"))
+        # db.session.execute(text("CREATE SCHEMA public;"))
+        # db.session.commit() #test tables
         db.create_all()
+        # try:
+        #     yield app
+        # finally:
+        #     db.drop_all()
         yield app
 
     with app.app_context():

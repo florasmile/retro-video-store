@@ -2,6 +2,7 @@ from flask import Flask
 from .db import db, migrate
 from .models import customer, rental, video
 from .routes.customer_routes import bp as customers_bp
+from .routes.video_routes import bp as videos_bp
 import os
 
 def create_app(config=None):
@@ -18,5 +19,6 @@ def create_app(config=None):
 
     # Register Blueprints here
     app.register_blueprint(customers_bp)
+    app.register_blueprint(videos_bp)
 
     return app
